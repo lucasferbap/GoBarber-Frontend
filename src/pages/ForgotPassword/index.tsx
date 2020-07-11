@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useContext, useState } from 'react';
+import React, { useRef, useCallback, useState } from 'react';
 import * as yup from 'yup';
 import { FiLogIn, FiMail } from 'react-icons/fi';
 import { Form } from '@unform/web';
@@ -51,7 +51,6 @@ const ForgotPassword: React.FC = () => {
             'Enviamos um e-mail para a confirmar a recuperação de senha, cheque a sua caixa de entrada',
         });
       } catch (error) {
-        console.log(error);
         if (error instanceof yup.ValidationError) {
           const errors = getValidationErrors(error);
           formRef.current?.setErrors(errors);
