@@ -72,8 +72,6 @@ const Profile: React.FC = () => {
             : {}),
         };
 
-        console.log(formData);
-
         const response = await api.put('/profile', formData);
 
         updateUser(response.data.user);
@@ -99,7 +97,7 @@ const Profile: React.FC = () => {
         });
       }
     },
-    [addToast, history],
+    [addToast, history, updateUser],
   );
 
   const handelAvatarChange = useCallback(
